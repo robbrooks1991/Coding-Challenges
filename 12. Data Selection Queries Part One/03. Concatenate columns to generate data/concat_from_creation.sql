@@ -1,0 +1,1 @@
+select distinct(person_id) from my_database.orders
