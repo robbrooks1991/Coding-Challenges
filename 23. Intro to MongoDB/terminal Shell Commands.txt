@@ -1,0 +1,137 @@
+Microsoft Windows [Version 10.0.14393]
+(c) 2016 Microsoft Corporation. All rights reserved.
+
+C:\Users\cjbro>cd../
+
+C:\Users>cd../
+
+C:\>cd program files
+
+C:\Program Files>cd mongodb
+
+C:\Program Files\MongoDB>cd server
+
+C:\Program Files\MongoDB\Server>cd 3.4
+
+C:\Program Files\MongoDB\Server\3.4>cd bin
+
+C:\Program Files\MongoDB\Server\3.4\bin>mongo
+MongoDB shell version v3.4.4
+connecting to: mongodb://127.0.0.1:27017
+MongoDB server version: 3.4.4
+Server has startup warnings:
+2017-05-18T19:49:12.149+0100 I CONTROL  [initandlisten]
+2017-05-18T19:49:12.150+0100 I CONTROL  [initandlisten] ** WARNING: Access control is not enabled for the database.
+2017-05-18T19:49:12.151+0100 I CONTROL  [initandlisten] **          Read and write access to data and configuration is unrestricted.
+2017-05-18T19:49:12.152+0100 I CONTROL  [initandlisten]
+> db.myFirstMDB.insert({
+...     first: 'john',
+...     last: 'lennon',
+...     dob: '09/10/1940',
+...     gender: 'm',
+...     hair_colour: 'brown',
+...     occupation: 'beatle',
+...     nationality: 'english'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.insert({
+...     first: 'kate',
+...     last: 'bush',
+...     dob: '30/07/1958',
+...     gender: 'f',
+...     hair_colour: 'brown',
+...     occupation: 'singer',
+...     nationality: 'english'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.insert({
+...     first: 'eve',
+...     last: 'ryan',
+...     dob: '19/09/1992',
+...     gender: 'f',
+...     hair_colour: 'pink',
+...     occupation: 'developer',
+...     nationality: 'irish'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.insert({
+...     first: 'martha',
+...     last: 'fenton',
+...     dob: '15/05/1974',
+...     gender: 'f',
+...     hair_colour: 'brown',
+...     occupation: 'manager',
+...     nationality: 'irish'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.insert({
+...     first: 'Neil',
+...     last: 'Hanslem',
+...     dob: '14/07/1983',
+...     gender: 'm',
+...     hair_colour: 'blonde',
+...     occupation: 'actor',
+...     nationality: 'english'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.insert({
+...     first: 'Rocky',
+...     last: 'Persolm',
+...     dob: '19/12/1994',
+...     gender: 'f',
+...     hair_colour: 'black',
+...     occupation: 'activist',
+...     nationality: 'american'
+... });
+WriteResult({ "nInserted" : 1 })
+> db.myFirstMDB.find()
+{ "_id" : ObjectId("591df033c7524eea2bd54e03"), "first" : "john", "last" : "lennon", "dob" : "09/10/1940", "gender" : "m", "hair_colour" : "brown", "occupation" : "beatle", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e04"), "first" : "kate", "last" : "bush", "dob" : "30/07/1958", "gender" : "f", "hair_colour" : "brown", "occupation" : "singer", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "pink", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e07"), "first" : "Neil", "last" : "Hanslem", "dob" : "14/07/1983", "gender" : "m", "hair_colour" : "blonde", "occupation" : "actor", "nationality" : "english" }
+{ "_id" : ObjectId("591df03fc7524eea2bd54e08"), "first" : "Rocky", "last" : "Persolm", "dob" : "19/12/1994", "gender" : "f", "hair_colour" : "black", "occupation" : "activist", "nationality" : "american" }
+> dm.myFirstMDB.find({gender: 'f'});
+2017-05-18T20:06:25.688+0100 E QUERY    [thread1] ReferenceError: dm is not defined :
+@(shell):1:1
+> db.myFirstMDB.find({gender: 'f'});
+{ "_id" : ObjectId("591df033c7524eea2bd54e04"), "first" : "kate", "last" : "bush", "dob" : "30/07/1958", "gender" : "f", "hair_colour" : "brown", "occupation" : "singer", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "pink", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+{ "_id" : ObjectId("591df03fc7524eea2bd54e08"), "first" : "Rocky", "last" : "Persolm", "dob" : "19/12/1994", "gender" : "f", "hair_colour" : "black", "occupation" : "activist", "nationality" : "american" }
+> db.myFirstMDB.find({gender: 'f', nationality: 'english'});
+{ "_id" : ObjectId("591df033c7524eea2bd54e04"), "first" : "kate", "last" : "bush", "dob" : "30/07/1958", "gender" : "f", "hair_colour" : "brown", "occupation" : "singer", "nationality" : "english" }
+> db.myFirstMDB.find({gender: 'f', $or: [{nationality: 'american'}, {nationality: 'irish'}]});
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "pink", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+{ "_id" : ObjectId("591df03fc7524eea2bd54e08"), "first" : "Rocky", "last" : "Persolm", "dob" : "19/12/1994", "gender" : "f", "hair_colour" : "black", "occupation" : "activist", "nationality" : "american" }
+> db.myFirstMDB.find().sort({nationality: 1})
+{ "_id" : ObjectId("591df03fc7524eea2bd54e08"), "first" : "Rocky", "last" : "Persolm", "dob" : "19/12/1994", "gender" : "f", "hair_colour" : "black", "occupation" : "activist", "nationality" : "american" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e03"), "first" : "john", "last" : "lennon", "dob" : "09/10/1940", "gender" : "m", "hair_colour" : "brown", "occupation" : "beatle", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e04"), "first" : "kate", "last" : "bush", "dob" : "30/07/1958", "gender" : "f", "hair_colour" : "brown", "occupation" : "singer", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e07"), "first" : "Neil", "last" : "Hanslem", "dob" : "14/07/1983", "gender" : "m", "hair_colour" : "blonde", "occupation" : "actor", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "pink", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+> db.myFirstMDB.find({gender: 'f', $or: [{nationality: 'irish'}, {nationality: 'english'}]}).linit(3)_
+2017-05-18T20:12:16.032+0100 E QUERY    [thread1] SyntaxError: missing ; before statement @(shell):1:99
+> db.myFirstMDB.find({gender: 'f', $or: [{nationality: 'irish'}, {nationality: 'english'}]}).linit(3);
+2017-05-18T20:12:25.257+0100 E QUERY    [thread1] TypeError: db.myFirstMDB.find(...).linit is not a function :
+@(shell):1:1
+> db.myFirstMDB.find({gender: 'f', $or: [{nationality: 'irish'}, {nationality: 'english'}]}).limit(3);
+{ "_id" : ObjectId("591df033c7524eea2bd54e04"), "first" : "kate", "last" : "bush", "dob" : "30/07/1958", "gender" : "f", "hair_colour" : "brown", "occupation" : "singer", "nationality" : "english" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "pink", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+> db.myFirstMDB.update({nationality: 'irish'}, {$set: {hair_colour: 'blue'}});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> dm.myFirstMDB.find({nationality: 'irish'});
+2017-05-18T20:15:09.121+0100 E QUERY    [thread1] ReferenceError: dm is not defined :
+@(shell):1:1
+> db.myFirstMDB.find({nationality: 'irish'});
+{ "_id" : ObjectId("591df033c7524eea2bd54e05"), "first" : "eve", "last" : "ryan", "dob" : "19/09/1992", "gender" : "f", "hair_colour" : "blue", "occupation" : "developer", "nationality" : "irish" }
+{ "_id" : ObjectId("591df033c7524eea2bd54e06"), "first" : "martha", "last" : "fenton", "dob" : "15/05/1974", "gender" : "f", "hair_colour" : "brown", "occupation" : "manager", "nationality" : "irish" }
+> db.myFirstMDB.update({nationality: 'irish'}, {$set: {hair_colour: 'blue'}},{multi:true});
+WriteResult({ "nMatched" : 2, "nUpserted" : 0, "nModified" : 1 })
+> db.myFirstMDB.remove({first: 'kate', last: 'bush'});
+WriteResult({ "nRemoved" : 1 })
+> db.myFirstMDB.remove({});
+WriteResult({ "nRemoved" : 5 })

@@ -1,6 +1,14 @@
 import MySQLdb as _mysql
 from collections import namedtuple
 
+import re
+
+# Only needs to compile one time so we put it here
+float_match = re.compile( r'[-+]?\d*\.?\d+(?:[eE][-+]?\d+)?$' ).match
+
+
+def is_number(string):
+    return bool( float_match( string ) )
 
 class MySQLDatabase(object):
     """
